@@ -23,7 +23,7 @@ services:
       - ROTA_ADMIN_USER=admin
       - ROTA_ADMIN_PASSWORD=admin
     networks:
-      - rota-network
+      - dokploy-network
     healthcheck:
       test:
         [
@@ -53,7 +53,7 @@ services:
     environment:
       - NEXT_PUBLIC_API_URL=http://localhost:8001
     networks:
-      - rota-network
+      - dokploy-network
     depends_on:
       rota-core:
         condition: service_healthy
