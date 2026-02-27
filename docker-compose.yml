@@ -72,7 +72,7 @@ services:
     volumes:
       - timescaledb-data:/var/lib/postgresql/data
     networks:
-      - rota-network
+      - dokploy-network
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U rota -d rota"]
       interval: 10s
@@ -85,5 +85,5 @@ volumes:
     driver: local
 
 networks:
-  rota-network:
-    driver: bridge
+  dokploy-network:
+    external: true
